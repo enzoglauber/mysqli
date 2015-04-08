@@ -23,7 +23,8 @@ class Mysqli_Database {
 
 		if($mysqli->connect_error)
 			throw new Exception('Connection Error: '.$mysqli->connect_error);
-
+		//the world understands utf8.
+		$mysqli->set_charset("utf8");
 		return $mysqli;
 	}
 
